@@ -1,13 +1,13 @@
 # Repartition des tâches :
 
  ## Création des tables et contraintes (pour chaque table, faire à part les ALTER table associés): 
-		- Joueur: 				Gabriel	
-		- Activite:			    Vincent
-		- Capsule:			    Vincent	
-		- Avatar:				Emeric (entraide pour couleurs)
-		- Jeu / Monde: 		    Baris	
-		- Habiletes: 			Baris
-		- Items:				Emeric
+		- Joueur: 		Gabriel	
+		- Activite:		Vincent
+		- Capsule:		Vincent	
+		- Avatar:		Emeric (entraide pour couleurs)
+		- Jeu / Monde: 		Baris	
+		- Habiletes: 		Baris
+		- Items:		Emeric
 		- PaireAvatarMonde: 	Gabriel	
 		- PaireItemsAvatar: 	Vincent
 		- PaireHabiliteMonde:   Baris
