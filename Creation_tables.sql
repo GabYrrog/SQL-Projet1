@@ -1,9 +1,11 @@
 -- Baris 
+
 DROP TABLE IF EXISTS Monde;
 DROP TABLE IF EXISTS Habilites;
 DROP TABLE IF EXISTS Paire_habilite_et_monde;
 
 -- Emeric drop tables
+
 DROP TABLE IF EXISTS Items;
 DROP TABLE IF EXISTS Avatar;
 DROP TABLE IF EXISTS Items_monde;
@@ -11,15 +13,18 @@ DROP TABLE IF EXISTS Phrases;
 
 
 -- Vincent
+
 DROP TABLE IF EXISTS Activite;
 DROP TABLE IF EXISTS Capsule;
 DROP TABLE IF EXISTS Item_avatar;
 
 -- Gabriel
+
 DROP TABLE IF EXISTS Avatar_habilite;
 DROP TABLE IF EXISTS Joueur;
 
 -- Emeric creation table Items
+
 CREATE TABLE Items (
     id_item             SERIAL PRIMARY KEY,
     nom                 VARCHAR(32) NOT NULL UNIQUE,
@@ -57,6 +62,7 @@ CREATE TABLE Phrases (
 
 
 -- Gabriel
+
 CREATE TABLE Joueur (
     id_alias                 VARCHAR(64)     PRIMARY KEY,
     courriel                VARCHAR(128)    UNIQUE NOT NULL,
@@ -102,6 +108,7 @@ CREATE TABLE Items_avatar(
 );
 
 -- Baris
+
 CREATE TABLE Monde (
     nom VARCHAR(16) PRIMARY KEY,
     sigle VARCHAR(6) UNIQUE NOT NULL,
@@ -127,6 +134,7 @@ CREATE TABLE Paire_habilite_et_monde (
 );
 
 -- Gabriel
+
 ALTER TABLE Joueur ADD CONSTRAINT cc_joueur_genre CHECK(genre IN ('f', 'h', 'x'));
 ALTER TABLE Joueur ADD  CONSTRAINT date_inscription_check CHECK (date_inscription > '2020-01-01');
 ALTER TABLE Joueur ADD  CONSTRAINT date_naissance_check CHECK (date_naissance > '1990-01-01');
@@ -135,6 +143,7 @@ ALTER TABLE Avatar_habilite ADD CONSTRAINT fk_id_avatar_avatar_habilite FOREIGN 
 ALTER TABLE Avatar_habilite ADD CONSTRAINT fk_id_habilite_avatar_habilite FOREIGN KEY (id_habilite) REFERENCES Habilite(id_habilite);
 
 -- Vincent
+
 ALTER TABLE Activite ADD CONSTRAINT fk_nom_joueur FOREIGN KEY (Joueur) REFERENCES Joueur(id_alias);
 ALTER TABLE Item_avatar
 	ADD CONSTRAINT fk_avatar FOREIGN KEY (Avatar) REFERENCES Avatar(nom),
@@ -145,12 +154,14 @@ ALTER TABLE Capsule
 	ADD CONSTRAINT fk_activite FOREIGN KEY (Activite) REFERENCES Activite(id_activite);
 
 -- Emeric
+
 ALTER TABLE Avatar ADD CONSTRAINT fk_avatar_alias_joueur FOREIGN KEY (alias_joueur) REFERENCES Joueur (alias);
 ALTER TABLE Items_monde ADD CONSTRAINT fk_items_monde_monde FOREIGN KEY (monde) REFERENCES Monde (nom);
 ALTER TABLE Items_monde ADD CONSTRAINT fk_items_monde_items FOREIGN KEY (item) REFERENCES Items (id_items_monde);
 ALTER TABLE Phrases ADD CONSTRAINT fk_phrases_id_avatar FOREIGN KEY (id_avatar) REFERENCES Avatar (id_nom);
 
 -- Baris
+
 ALTER TABLE Paire_habilite_et_monde ADD CONSTRAINT fk_habilite_monde_monde FOREIGN KEY (monde) REFERENCES Monde(nom);
 ALTER TABLE Paire_habilite_et_monde  ADD CONSTRAINT fk_habilite_monde_habilite FOREIGN KEY (habilite) REFERENCES Habilites(id_habilite);
 ALTER TABLE Monde ADD CONSTRAINT fk_monde_paire_habilite_et_monde FOREIGN KEY (nom) REFERENCES Paire_habilite_et_monde(monde);
