@@ -8,7 +8,7 @@
 		- Jeu / Monde: 		Baris	
 		- Habiletes: 		Baris
 		- Items:		Emeric
-		- PaireAvatarMonde: 	Gabriel	
+		- PaireHAbiliteAvatar: 	Gabriel	
 		- PaireItemsAvatar: 	Vincent
 		- PaireHabiliteMonde:   Baris
 		- PaireItemsEtMonde: 	Emeric
