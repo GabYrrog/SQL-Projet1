@@ -13,6 +13,7 @@
 		- PaireHabiliteMonde:   Baris
 		- PaireItemsEtMonde: 	Emeric
 		(11)
+  **Dans Creation_table.sql**
 		
   ## Scripts d'insert:
 		Chacun un joueur avec nos noms
@@ -30,3 +31,5 @@
 		
 		Insérer au moins trois entrées dans chaque table non intermédiaire (selon répartition 1)
 		Isérer nb entrées nécessaires dans chaque table intermédiaire (selon répartition 1
+
+  **Dans Insertions_Donnees.sql**
