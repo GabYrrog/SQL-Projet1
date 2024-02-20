@@ -12,6 +12,7 @@
 		- PaireItemsAvatar: 	Vincent
 		- PaireHabiliteMonde:   Baris
 		- PaireItemsEtMonde: 	Emeric
+  		- Table phrases		Emeric	
 		(11)
   **Dans Creation_table.sql**
 		
