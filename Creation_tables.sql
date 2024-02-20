@@ -4,8 +4,8 @@ CREATE TABLE monde (
     descriptions VARCHAR(2048)
 );
 
-CREATE TABLE habilités (
-    id_habilité SERIAL PRIMARY KEY,
+CREATE TABLE habilites (
+    id_habilite SERIAL PRIMARY KEY,
     nom VARCHAR(32) UNIQUE NOT NULL,
     sigle VARCHAR(3) UNIQUE NOT NULL,
     energie_max DECIMAL(7,3),
@@ -15,33 +15,33 @@ CREATE TABLE habilités (
     descriptions VARCHAR(24)
 );
 
-CREATE TABLE paire_habilité_et_monde (
+CREATE TABLE paire_habilite_et_monde (
     id_paire_habilite_monde SERIAL PRIMARY KEY,
     monde VARCHAR(16),
     habilite INTEGER,
     FOREIGN KEY (monde) REFERENCES monde(nom),
-    FOREIGN KEY (habilite) REFERENCES habilités(id_habilité)
+    FOREIGN KEY (habilite) REFERENCES habilites(id_habilite)
 );
 
--- Ajouter une clé étrangère à la table "paire_habilité_et_monde"
-ALTER TABLE paire_habilité_et_monde
-ADD CONSTRAINT fk_paire_habilité_et_monde_monde
+-- Ajouter une clé étrangère à la table "paire_habilite_et_monde"
+ALTER TABLE paire_habilite_et_monde
+ADD CONSTRAINT fk_paire_habilite_et_monde_monde
 FOREIGN KEY (monde)
 REFERENCES monde (nom);
 
-ALTER TABLE paire_habilité_et_monde
-ADD CONSTRAINT fk_paire_habilité_et_monde_habilités
+ALTER TABLE paire_habilite_et_monde
+ADD CONSTRAINT fk_paire_habilite_et_monde_habilites
 FOREIGN KEY (habilite)
-REFERENCES habilités (id_habilité);
+REFERENCES habilites (id_habilite);
 
 -- Ajouter une clé étrangère à la table "monde"
 ALTER TABLE monde
-ADD CONSTRAINT fk_monde_paire_habilité_et_monde
+ADD CONSTRAINT fk_monde_paire_habilite_et_monde
 FOREIGN KEY (nom)
-REFERENCES paire_habilité_et_monde (monde);
+REFERENCES paire_habilite_et_monde (monde);
 
 -- Ajouter une clé étrangère à la table "habilités"
-ALTER TABLE habilités
-ADD CONSTRAINT fk_habilités_paire_habilité_et_monde
-FOREIGN KEY (id_habilité)
-REFERENCES paire_habilité_et_monde (habilite);
+ALTER TABLE habilites
+ADD CONSTRAINT fk_habilites_paire_habilite_et_monde
+FOREIGN KEY (id_habilite)
+REFERENCES paire_habilite_et_monde (habilite);
