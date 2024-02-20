@@ -80,25 +80,25 @@ CREATE TABLE Activite(
 	id_activite	SERIAL 		PRIMARY KEY,
 	debut 		TIMESTAMP 	NOT NULL,
 	fin 		TIMESTAMP 	NOT NULL,
-	duree 		INT 		NOT NULL,
+	duree 		INTEGER		NOT NULL,
 	nom_joueur	VARCHAR(40)	NOT NULL
 );
 
 
 CREATE TABLE Capsule(
 	id_capsule	SERIAL	PRIMARY KEY,
-	duree		INT,
-	monde		VARCHAR(16)		NOT NULL,
+	duree		INTEGER,
+	monde		VARCHAR(16)	NOT NULL,
 	avatar		VARCHAR(32) 	NOT NULL,
-	activite	INT				NOT NULL
+	activite	INTEGER		NOT NULL
 );
 
 	
 
 CREATE TABLE Items_avatar(
-	id_item_avatar	SERIAL		PRIMARY KEY,
+	id_item_avatar	SERIAL			PRIMARY KEY,
 	avatar			VARCHAR(32)	NOT NULL,
-	item			INT			NOT NULL
+	item			INTEGER		NOT NULL
 );
 
 -- Baris
