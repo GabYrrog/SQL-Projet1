@@ -12,6 +12,7 @@ Repartition des tâches :
 		PaireItemsAvatar: 	Vincent
 		PaireHabiliteMonde: Baris
 		PaireItemsEtMonde: 	Emeric
+		Phrases				Emeric
 		(11)
 		
   - Scripts d'insert:
