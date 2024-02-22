@@ -30,7 +30,7 @@
 		Joueur principal avec 10 capsules d'activite:  Vincent
 		Autres joueurs avec 3 capsules chaque : Emeric, Baris, Gabriel
 		
-		Insérer au moins trois entrées dans chaque table non intermédiaire (selon répartition 1)
-		Isérer nb entrées nécessaires dans chaque table intermédiaire (selon répartition 1
+		Insérer au moins trois entrées dans chaque table non intermédiaire (selon répartition 1) 
+		Isérer nb entrées nécessaires dans chaque table intermédiaire excluant les capsules (deja fait precedemment) (selon répartition 1)
 
   **Dans Insertions_Donnees.sql**
