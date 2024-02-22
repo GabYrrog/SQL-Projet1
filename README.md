@@ -22,9 +22,9 @@
 		
 		
 		(Jeux avec 3 habilites chaque))
-		Gabriel : 1 jeu
-		Baris: 1 jeu
-		Emeric : 1 jeu 
+		Gabriel : 1 jeu SpaceX
+		Baris: 1 jeu  DeepHorizonX 
+		Emeric : 1 jeu FreeZoneX
 		Vincent: 6 items globaux
 		
 		Joueur principal avec 10 capsules d'activite:  Vincent
