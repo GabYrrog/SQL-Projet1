@@ -1,8 +1,8 @@
 -- Baris 
 
 DROP TABLE IF EXISTS Monde;
-DROP TABLE IF EXISTS Habilites;
-DROP TABLE IF EXISTS Paire_habilite_et_monde;
+DROP TABLE IF EXISTS habiletes;
+DROP TABLE IF EXISTS Paire_habilete_et_monde;
 
 -- Emeric drop tables
 
@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS Item_avatar;
 
 -- Gabriel
 
-DROP TABLE IF EXISTS Avatar_habilite;
+DROP TABLE IF EXISTS Avatar_habilete;
 DROP TABLE IF EXISTS Joueur;
 
 -- Emeric creation table Items
@@ -37,9 +37,7 @@ CREATE TABLE Items (
 
 CREATE TABLE Avatar (
     id_nom              VARCHAR(32) PRIMARY KEY,
-    couleur_1
-    couleur_2
-    couleur_3            
+    couleur		INTEGER,
     date_creation       DATE DEFAULT CURRENT_DATE NOT NULL,
     mox                 INTEGER DEFAULT 0 NOT NULL CHECK(mox BETWEEN -1000000000 AND 1000000000),
     alias_joueur        VARCHAR(32) NOT NULL            
@@ -73,10 +71,10 @@ CREATE TABLE Joueur (
 );
 
 
-CREATE TABLE Avatar_habilite (
-    id_avatar_habilite         SERIAL     PRIMARY KEY,
+CREATE TABLE Avatar_habilete (
+    id_avatar_habilete         SERIAL     PRIMARY KEY,
     id_avatar               SERIAL,
-    id_habilite             SERIAL
+    id_habilete             SERIAL
 );
 
 
@@ -115,8 +113,8 @@ CREATE TABLE Monde (
     descriptions VARCHAR(2048)
 );
 
-CREATE TABLE Habilites (
-    id_habilite SERIAL PRIMARY KEY,
+CREATE TABLE Habiletes (
+    id_habilete SERIAL PRIMARY KEY,
     nom VARCHAR(32) UNIQUE NOT NULL,
     sigle VARCHAR(3) UNIQUE NOT NULL,
     energie_max DECIMAL(7,3),
@@ -126,10 +124,10 @@ CREATE TABLE Habilites (
     descriptions VARCHAR(24)
 );
 
-CREATE TABLE Paire_habilite_et_monde (
-    id_paire_habilite_monde SERIAL PRIMARY KEY,
+CREATE TABLE Paire_habilete_et_monde (
+    id_paire_habilete_monde SERIAL PRIMARY KEY,
     monde VARCHAR(16),
-    habilite INTEGER
+    habilete INTEGER
     
 );
 
@@ -139,8 +137,8 @@ ALTER TABLE Joueur ADD CONSTRAINT cc_joueur_genre CHECK(genre IN ('f', 'h', 'x')
 ALTER TABLE Joueur ADD  CONSTRAINT date_inscription_check CHECK (date_inscription > '2020-01-01');
 ALTER TABLE Joueur ADD  CONSTRAINT date_naissance_check CHECK (date_naissance > '1990-01-01');
 ALTER TABLE Joueur ADD CONSTRAINT age_check CHECK (date_inscription - date_naissance > INTERVAL '13 years');
-ALTER TABLE Avatar_habilite ADD CONSTRAINT fk_id_avatar_avatar_habilite FOREIGN KEY (id_avatar) REFERENCES Avatar(id_avatar);
-ALTER TABLE Avatar_habilite ADD CONSTRAINT fk_id_habilite_avatar_habilite FOREIGN KEY (id_habilite) REFERENCES Habilite(id_habilite);
+ALTER TABLE Avatar_habilete ADD CONSTRAINT fk_id_avatar_avatar_habilete FOREIGN KEY (id_avatar) REFERENCES Avatar(id_avatar);
+ALTER TABLE Avatar_habilete ADD CONSTRAINT fk_id_habilete_avatar_habilete FOREIGN KEY (id_habilete) REFERENCES habilete(id_habilete);
 
 -- Vincent
 
@@ -162,8 +160,8 @@ ALTER TABLE Phrases ADD CONSTRAINT fk_phrases_id_avatar FOREIGN KEY (id_avatar) 
 
 -- Baris
 
-ALTER TABLE Paire_habilite_et_monde ADD CONSTRAINT fk_habilite_monde_monde FOREIGN KEY (monde) REFERENCES Monde(nom);
-ALTER TABLE Paire_habilite_et_monde  ADD CONSTRAINT fk_habilite_monde_habilite FOREIGN KEY (habilite) REFERENCES Habilites(id_habilite);
-ALTER TABLE Monde ADD CONSTRAINT fk_monde_paire_habilite_et_monde FOREIGN KEY (nom) REFERENCES Paire_habilite_et_monde(monde);
-ALTER TABLE Habilites ADD CONSTRAINT fk_habilites_paire_habilite_et_monde FOREIGN KEY (id_habilite) REFERENCES Paire_habilite_et_monde (habilite);
+ALTER TABLE Paire_habilete_et_monde ADD CONSTRAINT fk_habilete_monde_monde FOREIGN KEY (monde) REFERENCES Monde(nom);
+ALTER TABLE Paire_habilete_et_monde  ADD CONSTRAINT fk_habilete_monde_habilete FOREIGN KEY (habilete) REFERENCES habiletes(id_habilete);
+ALTER TABLE Monde ADD CONSTRAINT fk_monde_paire_habilete_et_monde FOREIGN KEY (nom) REFERENCES Paire_habilete_et_monde(monde);
+ALTER TABLE habiletes ADD CONSTRAINT fk_habiletes_paire_habilete_et_monde FOREIGN KEY (id_habilete) REFERENCES Paire_habilete_et_monde (habilete);
 
