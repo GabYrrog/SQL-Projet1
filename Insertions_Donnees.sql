@@ -87,3 +87,57 @@ INSERT INTO Capsule(duree,monde,avatar,activite)
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
         VALUES  (55, 'FreeZoneXTM', 'Jeff',1);
+
+-- Baris
+
+-- Insérer les joueurs
+INSERT INTO Joueur (id_alias, courriel, mot_de_passe, genre, date_inscription, date_naissance)
+VALUES ('Baris', 'baris@email.com', 'motdepasse123', 'h', '2022-02-22', '2000-01-01');
+
+-- Insérer l'avatar de Baris
+INSERT INTO Avatar (id_nom, couleur, date_creation, mox, alias_joueur)
+VALUES ('BarisAvatar1', 1, '2022-01-15', 500, 'Baris*');
+
+-- Insérer les jeux et leurs habiletés
+INSERT INTO Monde (nom, sigle, descriptions)
+VALUES ('DeepHorizonX', 'DHX', 'Jeu de science-fiction futuriste');
+
+INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
+VALUES ('Auto Guérison', 'AGU', 100, 0.5, 0.3, 0.2, 'Capacité de récupérer de la santé automatiquement');
+
+INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
+VALUES ('Implant Zoom Oculaire', 'IZO', 50, 0.7, 0.2, 0.1, 'Implant permettant de zoomer avec les yeux');
+
+INSERT INTO Paire_habilete_et_monde (monde, habilete)
+VALUES ('DeepHorizonX', (SELECT id_habilete FROM Habilete WHERE sigle = 'AGU')),
+       ('DeepHorizonX', (SELECT id_habilete FROM Habilete WHERE sigle = 'IZO'));
+
+-- Insérer les items
+INSERT INTO Items (nom, sigle, probabilite, description)
+VALUES ('Potion de Régénération', 'PRG', 0.05, 'Restaure 50% de la santé.'),
+       ('Grenade EMP', 'EMP', 0.02, 'Désactive les appareils électroniques ennemis.');
+
+INSERT INTO Items_monde (monde, item)
+VALUES ('DeepHorizonX', (SELECT id_item FROM Items WHERE sigle = 'PRG')),
+       ('DeepHorizonX', (SELECT id_item FROM Items WHERE sigle = 'EMP'));
+
+INSERT INTO Activite (debut, fin, duree, nom_joueur)
+VALUES ('2022-03-01 08:00:00', '2022-03-01 09:00:00', 3600, 'Baris'),
+       ('2022-03-02 10:00:00', '2022-03-02 12:00:00', 7200, 'Baris'),
+       ('2022-03-03 14:00:00', '2022-03-03 15:30:00', 5400, 'Baris');
+
+
+-- Insérer les capsules d'activité pour Baris 
+INSERT INTO Capsule (duree, monde, avatar, activite)
+VALUES (3600, 'DeepHorizonX', 'BarisAvatar1', 1),
+       (7200, 'DeepHorizonX', 'BarisAvatar1', 2),
+       (5400, 'DeepHorizonX', 'BarisAvatar1', 3);
+
+INSERT INTO Phrases (id_nom, phrase)
+VALUES ('BarisAvatar1', 'GG EZ'),
+       ('BarisAvatar1', 'Toujours prêt à défendre le monde.'),
+       ('BarisAvatar1', 'En avant vers la victoire!')
+
+
+-- Vincent
+
