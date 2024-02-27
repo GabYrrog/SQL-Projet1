@@ -23,18 +23,6 @@ VALUES ('Bouclier de proximite', 'BP', 80.500, 2.0, 1.0, 0.5, 'Augmente la defen
 INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
 VALUES ('Backstab', 'BST', 60.250, 0.5, 1.5, 2.0, 'Tu las pas vu venir');
 
-
--- 3 capsules   REVISER LES INT ACTIVITE pour que ca fitte avec les bons serials
-INSERT INTO Capsule (duree, monde, avatar, activite)
-VALUES (30, 'SpaceX', 'Chuck', 2);
-
-INSERT INTO Capsule (duree, monde, avatar, activite)
-VALUES (45, 'DeepHorizonX', 'Chuck', 1);
-
-INSERT INTO Capsule (duree, monde, avatar, activite)
-VALUES (60, 'FreeZoneX', 'Chuck', 0);
-
-
 -- 2 activites
 INSERT INTO Activite (debut, fin, duree, nom_joueur)
 VALUES ('2024-02-23 14:00:00', '2024-02-23 15:00:00', 60, 'GabYrrog');
@@ -44,6 +32,17 @@ VALUES ('2024-02-24 10:00:00', '2024-02-24 10:30:00', 30, 'GabYrrog');
 
 INSERT INTO Activite (debut, fin, duree, nom_joueur)
 VALUES ('2024-02-26 10:00:00', '2024-02-26 10:30:00', 30, 'GabYrrog');
+
+-- 3 capsules   REVISER LES INT ACTIVITE pour que ca fitte avec les bons serials
+INSERT INTO Capsule (duree, monde, avatar, activite)
+VALUES (30, 'SpaceX', 'Chuck', 3);
+
+INSERT INTO Capsule (duree, monde, avatar, activite)
+VALUES (45, 'DeepHorizonX', 'Chuck', 2);
+
+INSERT INTO Capsule (duree, monde, avatar, activite)
+VALUES (60, 'FreeZoneX', 'Chuck', 1);
+
 
 -- 3 avatar_habiletes
 INSERT INTO Avatar_habilete (id_nom, id_habilete, date_obtention, niveau_actuel)
@@ -75,16 +74,16 @@ VALUES('2023-02-30 01:00:00','2023-02-30 02:00:00',60,'Viken*'), -- activite 4
 
 -- Insert 10 capsule
 INSERT INTO Capsule (duree, monde, avatar, activite)
-VALUES (30,'DeepHorizonX','Virlak*', 3),
-        (30,'SpaceX','Palstice',3),
-        (120,'SpaceX','Virlak*',4),
-        (120,'FreeZoneX','Virlak*',4),
-        (120,'DeepHorizonX','Virlak*',4),
-        (240,'DeepHorizonX','Sephiroth',4),
-        (60,'SpaceX','Virlak*',5),
-        (60,'FreeZoneX','Virlak*',5),
+VALUES (30,'DeepHorizonX','Virlak*', 4),
+        (30,'SpaceX','Palstice',4),
+        (120,'SpaceX','Virlak*',5),
+        (120,'FreeZoneX','Virlak*',5),
         (120,'DeepHorizonX','Virlak*',5),
-        (240,'FreeZoneX','Virlak*',6);
+        (240,'DeepHorizonX','Sephiroth',5),
+        (60,'SpaceX','Virlak*',6),
+        (60,'FreeZoneX','Virlak*',6),
+        (120,'DeepHorizonX','Virlak*',6),
+        (240,'FreeZoneX','Virlak*',7);
 
 -- Insert 6 items globaux
 INSERT INTO Items (nom, sigle, probabilite, description)
@@ -130,15 +129,15 @@ INSERT INTO Activite (debut, fin, duree, nom_joueur)
             'Emeric');
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (300, 'FreeZoneXTM', 'Jeff',7);
+        VALUES  (300, 'FreeZoneXTM', 'Jeff',8);
 
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (200, 'FreeZoneXTM', 'Jeff',7);
+        VALUES  (200, 'FreeZoneXTM', 'Jeff',8);
 
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (55, 'FreeZoneXTM', 'Jeff',7);
+        VALUES  (55, 'FreeZoneXTM', 'Jeff',8);
 
 -- Baris
 
@@ -181,9 +180,9 @@ VALUES ('2022-03-01 08:00:00', '2022-03-01 09:00:00', 3600, 'Baris'),
 
 -- Insérer les capsules d'activité pour Baris 
 INSERT INTO Capsule (duree, monde, avatar, activite)
-VALUES (3600, 'DeepHorizonX', 'BarisAvatar1', 8),
-       (7200, 'DeepHorizonX', 'BarisAvatar1', 9),
-       (5400, 'DeepHorizonX', 'BarisAvatar1', 10);
+VALUES (3600, 'DeepHorizonX', 'BarisAvatar1', 9),
+       (7200, 'DeepHorizonX', 'BarisAvatar1', 10),
+       (5400, 'DeepHorizonX', 'BarisAvatar1', 11);
 
 INSERT INTO Phrases (id_nom, phrase)
 VALUES ('BarisAvatar1', 'GG EZ'),
