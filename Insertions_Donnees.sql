@@ -39,4 +39,4 @@ VALUES ('Trousse de soin','ITS', 0.05, 'Une trousse de premier soin qui permet d
         ('Oppenglamer','IOP',0.001,'Entoure votre personnage d"un halo lumineux lui conferant une augmentation de charisme importante');
 
 -- Insert ItemsAvatar
-INSERT INTO ItemsAvatar (
+INSERT INTO Item_avatar (avatar, item)
