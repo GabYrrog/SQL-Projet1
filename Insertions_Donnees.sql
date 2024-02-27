@@ -58,7 +58,7 @@ VALUES ('Chuck','3', '2024-02-26 10:09:00', 2);
 
 -- Insert Joueur
 INSERT INTO Joueur (id_alias, courriel, mot_de_passe, genre, date_inscription, date_naissance)
-VALUES ('Viken*','vynxwarrior@hotmail.com', 'BonjourPascal666', 'M','2023-02-25 06:06:06','1995-05-24 02:40:58');
+VALUES ('Viken*','vynxwarrior@hotmail.com', 'BonjourPascal666', 'h','2023-02-25 06:06:06','1995-05-24 02:40:58');
 
 --Insert Avatar
 INSERT INTO Avatar (id_nom, couleur,date_creation, mox, alias_joueur)
