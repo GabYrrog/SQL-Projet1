@@ -21,7 +21,7 @@ INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions
 VALUES ('Bouclier de proximite', 'BP', 80.500, 2.0, 1.0, 0.5, 'Augmente la defense quand on est proche dun ennemi');
 
 INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
-VALUES ('Backstab', 'BSTB', 60.250, 0.5, 1.5, 2.0, 'Tu las pas vu venir');
+VALUES ('Backstab', 'BST', 60.250, 0.5, 1.5, 2.0, 'Tu las pas vu venir');
 
 
 -- 3 capsules   REVISER LES INT ACTIVITE pour que ca fitte avec les bons serials
