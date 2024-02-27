@@ -155,10 +155,10 @@ INSERT INTO Monde (nom, sigle, descriptions)
 VALUES ('DeepHorizonX', 'DHX', 'Jeu de science-fiction futuriste');
 
 INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
-VALUES ('Auto Guérison', 'AGU', 100, 0.5, 0.3, 0.2, 'Capacité de récupérer de la santé automatiquement');
+VALUES ('Auto Guérison', 'AGU', 100, 0.5, 0.3, 0.2, 'Récupérer santé automatiquement');
 
 INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
-VALUES ('Implant Zoom Oculaire', 'IZO', 50, 0.7, 0.2, 0.1, 'Implant permettant de zoomer avec les yeux');
+VALUES ('Implant Zoom Oculaire', 'IZO', 50, 0.7, 0.2, 0.1, 'Implant permettant de zoomer');
 
 INSERT INTO Paire_habilete_et_monde (monde, habilete)
 VALUES ('DeepHorizonX', (SELECT id_habilete FROM Habilete WHERE sigle = 'AGU')),

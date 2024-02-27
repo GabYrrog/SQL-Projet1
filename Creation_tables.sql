@@ -127,7 +127,7 @@ CREATE TABLE Habilete (
     coef1 DOUBLE PRECISION,
     coef2 DOUBLE PRECISION,
     coef3 DOUBLE PRECISION,
-    descriptions VARCHAR(24)
+    descriptions VARCHAR(1024)
 );
 
 CREATE TABLE Paire_habilete_et_monde (
