@@ -5,7 +5,7 @@ INSERT INTO Joueur (id_alias, courriel, mot_de_passe, genre, date_inscription, d
 VALUES ('GabYrrog', 'sk8er_gaby007@hotmail.com', '123meilleurpassword', 'h', '2023-02-23 00:00:00', '1990-06-14 00:00:00');
 -- Insert Avatar
 INSERT INTO Avatar (id_nom, couleur, date_creation, mox, alias_joueur)
-VALUES ('Chuck', '3840', '2023-02-23 00:00:00', '48', 'GabYrrog');
+VALUES ('Chuck', '3840', '2023-02-23 00:00:00', 48, 'GabYrrog');
 
 
 -- Insert Monde
@@ -62,9 +62,9 @@ VALUES ('Viken*','vynxwarrior@hotmail.com', 'BonjourPascal666', 'h','2023-02-25 
 
 --Insert Avatar
 INSERT INTO Avatar (id_nom, couleur,date_creation, mox, alias_joueur)
-VALUES ('Virlak*','1666', '2023-02-25 06:06:06', 'Viken*'),
-        ('Palstice','4242','2023-02-26 00:00:00', 'Viken*'),
-        ('Sephiroth', '8888', '2023-02-28 00:00:00', 'Viken*');
+VALUES ('Virlak*','1666', '2023-02-25 06:06:06',200, 'Viken*'),
+        ('Palstice','4242','2023-02-26 00:00:00',400, 'Viken*'),
+        ('Sephiroth', '8888', '2023-02-28 00:00:00',1000, 'Viken*');
 
 -- Insert 4 activites
 INSERT INTO Activite (debut,fin,duree,nom_joueur)
