@@ -16,12 +16,17 @@ INSERT INTO Monde
 INSERT INTO Activite (debut, fin, duree, nom_joueur)
         VALUES  (
             now(),
-            now() + INTERVAL '55 minutes',
+            now() + INTERVAL '555 minutes',
             555,
             'Emeric');
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (300, 'FreeZoneXTM', 'Jeff', 
-        SELECT id_activite, duree
-        FROM Activite
-        WHERE id_activite = 1);
+        VALUES  (300, 'FreeZoneXTM', 'Jeff',1);
+
+
+INSERT INTO Capsule(duree,monde,avatar,activite)
+        VALUES  (200, 'FreeZoneXTM', 'Jeff',1);
+
+
+INSERT INTO Capsule(duree,monde,avatar,activite)
+        VALUES  (55, 'FreeZoneXTM', 'Jeff',1);
