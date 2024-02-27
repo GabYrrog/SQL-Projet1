@@ -46,12 +46,12 @@ INSERT INTO Activite (debut, fin, duree, nom_joueur)
 VALUES ('2024-02-26 10:00:00', '2024-02-26 10:30:00', 30, 'GabYrrog');
 
 -- 3 avatar_habiletes
-INSERT INTO Avatar_habilete (id_nom, id_habilete, )
-VALUES ('Chuck','1');
-INSERT INTO Avatar_habilete (id_nom, id_habilete)
-VALUES ('Chuck','2');
-INSERT INTO Avatar_habilete (id_nom, id_habilete)
-VALUES ('Chuck','3');
+INSERT INTO Avatar_habilete (id_nom, id_habilete, date_obtention, niveau_actuel)
+VALUES ('Chuck','1', '2024-02-26 10:10:00', 2);
+INSERT INTO Avatar_habilete (id_nom, id_habilete, date_obtention, niveau_actuel)
+VALUES ('Chuck','2', '2024-02-26 10:01:00', 4);
+INSERT INTO Avatar_habilete (id_nom, id_habilete, date_obtention, niveau_actuel)
+VALUES ('Chuck','3', '2024-02-26 10:09:00', 2);
 -- VALIDER si les serial fittent avec mes habiletes
 
 -- Vincent
