@@ -74,7 +74,9 @@ CREATE TABLE Joueur (
 CREATE TABLE Avatar_habilete (
     id_nom_habilete         SERIAL     PRIMARY KEY,
     id_nom               VARCHAR(32),
-    id_habilete             SERIAL
+    id_habilete             INTEGER,
+    date_obtention        TIMESTAMP    default now(),
+    niveau_actuel           INTEGER    default 1 NOT NULL
 );
 
 
@@ -102,7 +104,9 @@ CREATE TABLE Capsule(
 CREATE TABLE Item_avatar(
 	id_item_avatar	SERIAL			PRIMARY KEY,
 	avatar			VARCHAR(32)	NOT NULL,
-	item			INTEGER		NOT NULL
+	item			INTEGER		NOT NULL,
+    date_obtention  TIMESTAMP    default now(),
+    quantite         INTEGER    default 1 NOT NULL
 );
 
 -- Baris
@@ -139,13 +143,14 @@ ALTER TABLE Joueur ADD  CONSTRAINT date_naissance_check CHECK (date_naissance > 
 ALTER TABLE Joueur ADD CONSTRAINT age_check CHECK (date_inscription - date_naissance > INTERVAL '13 years');
 ALTER TABLE Avatar_habilete ADD CONSTRAINT fk_id_nom_avatar_habilete FOREIGN KEY (id_nom) REFERENCES Avatar(id_nom);
 ALTER TABLE Avatar_habilete ADD CONSTRAINT fk_id_habilete_avatar_habilete FOREIGN KEY (id_habilete) REFERENCES habilete(id_habilete);
-
+ALTER TABLE Avatar_habilete ADD CONSTRAINT cc_habilete_avatar_niveau CHECK(niveau_actuel BETWEEN 1 AND 100);
 -- Vincent
 
 ALTER TABLE Activite ADD CONSTRAINT fk_nom_joueur FOREIGN KEY (nom_joueur) REFERENCES Joueur(id_alias);
 ALTER TABLE Item_avatar
 	ADD CONSTRAINT fk_avatar FOREIGN KEY (avatar) REFERENCES Avatar(id_nom),
-	ADD CONSTRAINT fk_item	FOREIGN KEY (item) REFERENCES Items(id_item);
+	ADD CONSTRAINT fk_item	FOREIGN KEY (item) REFERENCES Items(id_item),
+    ADD CONSTRAINT cc_avatar_item CHECK (quantite BETWEEN 1 AND 1000000);
 ALTER TABLE Capsule 
 	ADD CONSTRAINT fk_monde FOREIGN KEY (monde) REFERENCES Monde(nom),
 	ADD CONSTRAINT fk_avatar FOREIGN KEY (avatar) REFERENCES Avatar(id_nom),

@@ -31,5 +31,11 @@ Repartition des tâches :
 		
 		Insérer au moins trois entrées dans chaque table non intermédiaire (selon répartition 1)
 		Isérer nb entrées nécessaires dans chaque table intermédiaire (selon répartition 1)
+
+Requetes: 
+	Gab: 5,6,7
+	Emeric: 1,4,7
+	Baris: 2,7
+	Vincent:3,7,(8)
 		
 

@@ -45,7 +45,7 @@ INSERT INTO Activite (debut, fin, duree, nom_joueur)
 VALUES ('2024-02-26 10:00:00', '2024-02-26 10:30:00', 30, 'GabYrrog');
 
 -- 3 avatar_habiletes
-INSERT INTO Avatar_habilete (id_nom, id_habilete)
+INSERT INTO Avatar_habilete (id_nom, id_habilete, )
 VALUES ('Chuck','1');
 INSERT INTO Avatar_habilete (id_nom, id_habilete)
 VALUES ('Chuck','2');
