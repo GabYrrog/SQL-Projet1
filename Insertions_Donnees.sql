@@ -182,9 +182,9 @@ VALUES ('BarisAvatar1', 'GG EZ'),
 
 -- Vincent Insert ItemsAvatar
 INSERT INTO Item_avatar (avatar, item, quantite)
-VALUES (3,1,3),
-        (4,3,4),
-        (5,6,1),
-        (6,4,9),
-        (4,2,3),
-        (1,4,2);
+VALUES ('Jeff',1,3),
+        ('Palstice',3,4),
+        ('Sephiroth',6,1),
+        ('Virlak*',4,9),
+        ('Chuck',2,3),
+        ('BarisAvatar1',4,2);
