@@ -1,3 +1,4 @@
+
 -- Gabriel
 -- Insert Joueur
 INSERT INTO Joueur (id_alias, courriel, mot_de_passe, genre, date_inscription, date_naissance)
@@ -53,6 +54,57 @@ INSERT INTO Avatar_habilete (id_nom, id_habilete)
 VALUES ('Chuck','3');
 -- VALIDER si les serial fittent avec mes habiletes
 
+-- Vincent
+
+-- Insert Joueur
+INSERT INTO Joueur (id_alias, courriel, mot_de_passe, genre, date_inscription, date_naissance)
+VALUES ('Viken*','vynxwarrior@hotmail.com', 'BonjourPascal666', 'M','2023-02-25 06:06:06','1995-05-24 02:40:58');
+
+--Insert Avatar
+INSERT INTO Avatar (id_nom, couleur,date_creation, mox, alias_joueur)
+VALUES ('Virlak*','1666', '2023-02-25 06:06:06', 'Viken*'),
+        ('Palstice','4242','2023-02-26 00:00:00', 'Viken*'),
+        ('Sephiroth', '8888', '2023-02-28 00:00:00', 'Viken*');
+
+-- Insert 4 activites
+INSERT INTO Activite (debut,fin,duree,nom_joueur)
+VALUES('2023-02-30 01:00:00','2023-02-30 02:00:00',60,'Viken*'), -- activite 4
+        ('2023-03-02 05:00:00', '2023-03-02 15:00:00',600,'Viken*'),  -- activite 5
+        ('2023-03-05 18:00:00','2023-03-05 22:00:00',240,'Viken*'),  -- activite 6
+        ('2023-03-10 22:00:00','2023-03-11 02:00:00',240,'Viken*');  -- activite 7
+
+-- Insert 10 capsule
+INSERT INTO Capsule (duree, monde, avatar, activite)
+VALUES (30,'DeepHorizonX','Virlak*', 4),
+        (30,'SpaceX','Palstice',4),
+        (120,'SpaceX','Virlak*',5),
+        (120,'FreeZoneX','Virlak*',5),
+        (120,'DeepHorizonX','Virlak*',5),
+        (240,'DeepHorizonX','Sephiroth',5),
+        (60,'SpaceX','Virlak*',6),
+        (60,'FreeZoneX','Virlak*',6),
+        (120,'DeepHorizonX','Virlak*',6),
+        (240,'FreeZoneX','Virlak*',7);
+
+-- Insert 6 items globaux
+INSERT INTO Items (nom, sigle, probabilite, description)
+VALUES ('Trousse de soin','ITS', 0.05, 'Une trousse de premier soin qui permet de soigner jusqu"aux blessures les plus graves'),
+        ('Plume de pheonix','IPP',0.005,'Permet de ressuscitu un camarae tombe au combat'),
+        ('Pierre de teleportation','IPT',0.02,'Permet de se teleporter vers le dernier lieu de repos rencontrer'),
+        ('ArmaGideon','IAG', 0.001,'Arme de destruction massive permet de d"anihiler toute vie dans un rayon de 2km'),
+        ('Chickiriko','ICH',0.01,'Poule qui quand lancer sur un enemi fait apparaitre une armada de poules vengeuses'),
+        ('Oppenglamer','IOP',0.001,'Entoure votre personnage d"un halo lumineux lui conferant une augmentation de charisme importante');
+
+-- Insert ItemsAvatar
+INSERT INTO Item_avatar (avatar, item, quantite)
+VALUES (3,1,3),
+        (4,3,4),
+        (5,6,1),
+        (6,4,9),
+        (4,2,3),
+        (1,4,2);
+
+
 
 -- Emeric
 -- NOTE voir Table Avatar alias_joueur et Table Joueur id_nom n'ont pas le même nombre dans le varchar
@@ -78,15 +130,15 @@ INSERT INTO Activite (debut, fin, duree, nom_joueur)
             'Emeric');
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (300, 'FreeZoneXTM', 'Jeff',1);
+        VALUES  (300, 'FreeZoneXTM', 'Jeff',8);
 
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (200, 'FreeZoneXTM', 'Jeff',1);
+        VALUES  (200, 'FreeZoneXTM', 'Jeff',8);
 
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (55, 'FreeZoneXTM', 'Jeff',1);
+        VALUES  (55, 'FreeZoneXTM', 'Jeff',8);
 
 -- Baris
 
@@ -129,15 +181,13 @@ VALUES ('2022-03-01 08:00:00', '2022-03-01 09:00:00', 3600, 'Baris'),
 
 -- Insérer les capsules d'activité pour Baris 
 INSERT INTO Capsule (duree, monde, avatar, activite)
-VALUES (3600, 'DeepHorizonX', 'BarisAvatar1', 1),
-       (7200, 'DeepHorizonX', 'BarisAvatar1', 2),
-       (5400, 'DeepHorizonX', 'BarisAvatar1', 3);
+VALUES (3600, 'DeepHorizonX', 'BarisAvatar1', 9),
+       (7200, 'DeepHorizonX', 'BarisAvatar1', 10),
+       (5400, 'DeepHorizonX', 'BarisAvatar1', 11);
 
 INSERT INTO Phrases (id_nom, phrase)
 VALUES ('BarisAvatar1', 'GG EZ'),
        ('BarisAvatar1', 'Toujours prêt à défendre le monde.'),
        ('BarisAvatar1', 'En avant vers la victoire!')
 
-
--- Vincent
 
