@@ -188,6 +188,6 @@ VALUES (3600, 'DeepHorizonX', 'BarisAvatar1', 9),
 INSERT INTO Phrases (id_nom, phrase)
 VALUES ('BarisAvatar1', 'GG EZ'),
        ('BarisAvatar1', 'Toujours prêt à défendre le monde.'),
-       ('BarisAvatar1', 'En avant vers la victoire!')
+       ('BarisAvatar1', 'En avant vers la victoire!');
 
 
