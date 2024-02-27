@@ -40,3 +40,9 @@ VALUES ('Trousse de soin','ITS', 0.05, 'Une trousse de premier soin qui permet d
 
 -- Insert ItemsAvatar
 INSERT INTO Item_avatar (avatar, item)
+VALUES (3,1),
+        (4,3),
+        (5,6),
+        (6,4),
+        (4,2),
+        (1,4);
