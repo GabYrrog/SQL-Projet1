@@ -61,11 +61,13 @@ CREATE TABLE Phrases (
 
 -- Gabriel
 
+CREATE TYPE genre_enum AS ENUM ('f', 'h', 'x');
+
 CREATE TABLE Joueur (
     id_alias                 VARCHAR(64)     PRIMARY KEY,
     courriel                VARCHAR(128)    UNIQUE NOT NULL,
     mot_de_passe            VARCHAR(32)     NOT NULL,
-    genre                   CHAR,
+    genre                   genre_enum,
     date_inscription        TIMESTAMP NOT NULL DEFAULT CURRENT_DATE,
     date_naissance          TIMESTAMP            NOT NULL
 );
@@ -137,7 +139,7 @@ CREATE TABLE Paire_habilete_et_monde (
 
 -- Gabriel
 
-ALTER TABLE Joueur ADD CONSTRAINT cc_joueur_genre CHECK(genre IN ('f', 'h', 'x'));
+
 ALTER TABLE Joueur ADD  CONSTRAINT date_inscription_check CHECK (date_inscription > '2020-01-01');
 ALTER TABLE Joueur ADD  CONSTRAINT date_naissance_check CHECK (date_naissance > '1990-01-01');
 ALTER TABLE Joueur ADD CONSTRAINT age_check CHECK (date_inscription - date_naissance > INTERVAL '13 years');

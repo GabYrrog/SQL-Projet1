@@ -2,7 +2,7 @@
 -- Gabriel
 -- Insert Joueur
 INSERT INTO Joueur (id_alias, courriel, mot_de_passe, genre, date_inscription, date_naissance)
-VALUES ('GabYrrog', 'sk8er_gaby007@hotmail.com', '123meilleurpassword', 'M', '2023-02-23 00:00:00', '1990-06-14 00:00:00');
+VALUES ('GabYrrog', 'sk8er_gaby007@hotmail.com', '123meilleurpassword', 'h', '2023-02-23 00:00:00', '1990-06-14 00:00:00');
 -- Insert Avatar
 INSERT INTO Avatar (id_nom, couleur, date_creation, mox, alias_joueur)
 VALUES ('Chuck', '3840', '2023-02-23 00:00:00', '48', 'GabYrrog');
