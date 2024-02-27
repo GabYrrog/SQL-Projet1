@@ -30,7 +30,7 @@ VALUES (30,'DeepHorizonX','Virlak*', 4),
         (240,'FreeZoneX','Virlak*',7);
 
 -- Insert 6 items globaux
-Insert INTO Items (nom, sigle, probabilite, description)
+INSERT INTO Items (nom, sigle, probabilite, description)
 VALUES ('Trousse de soin','ITS', 0.05, 'Une trousse de premier soin qui permet de soigner jusqu"aux blessures les plus graves'),
         ('Plume de pheonix','IPP',0.005,'Permet de ressuscitu un camarae tombe au combat'),
         ('Pierre de teleportation','IPT',0.02,'Permet de se teleporter vers le dernier lieu de repos rencontrer'),
@@ -38,3 +38,5 @@ VALUES ('Trousse de soin','ITS', 0.05, 'Une trousse de premier soin qui permet d
         ('Chickiriko','ICH',0.01,'Poule qui quand lancer sur un enemi fait apparaitre une armada de poules vengeuses'),
         ('Oppenglamer','IOP',0.001,'Entoure votre personnage d"un halo lumineux lui conferant une augmentation de charisme importante');
 
+-- Insert ItemsAvatar
+INSERT INTO ItemsAvatar (
