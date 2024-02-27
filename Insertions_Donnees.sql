@@ -8,9 +8,19 @@ INSERT INTO Avatar (id_nom, couleur, date_creation, mox, alias_joueur)
 VALUES ('Chuck', '3840', '2023-02-23 00:00:00', 48, 'GabYrrog');
 
 
--- Insert Monde
+-- Insert Monde Gabriel
 INSERT INTO Monde (nom, sigle, descriptions)
 VALUES ('SpaceX', 'Elon', 'Un monde ressemblant etrangement a mars');
+
+-- Emeric insert table monde de FreeZoneXTM
+INSERT INTO Monde 
+        VALUES  ('FreeZoneXTM', 'FZX', 'This is the world mister bezos wants to make');
+
+-- BARIS Insérer les jeux et leurs habiletés
+INSERT INTO Monde (nom, sigle, descriptions)
+VALUES ('DeepHorizonX', 'DHX', 'Jeu de science-fiction futuriste');
+
+
 
 -- 3 habiletes
 
@@ -116,9 +126,6 @@ INSERT INTO Joueur
 INSERT INTO Avatar
         VALUES  ('Jeff',10,DEFAULT, DEFAULT, 'Emeric');
 
--- Emeric insert table monde de FreeZoneXTM
-INSERT INTO Monde 
-        VALUES  ('FreeZoneXTM', 'FZX', 'This is the world mister bezos wants to make');
 
 -- Emeric insert 3 capsules d'activité
 INSERT INTO Activite (debut, fin, duree, nom_joueur)
@@ -129,15 +136,15 @@ INSERT INTO Activite (debut, fin, duree, nom_joueur)
             'Emeric');
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (300, 'FreeZoneXTM', 'Jeff',8);
+        VALUES  (300, 'FreeZoneX', 'Jeff',8);
 
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (200, 'FreeZoneXTM', 'Jeff',8);
+        VALUES  (200, 'FreeZoneX', 'Jeff',8);
 
 
 INSERT INTO Capsule(duree,monde,avatar,activite)
-        VALUES  (55, 'FreeZoneXTM', 'Jeff',8);
+        VALUES  (55, 'FreeZoneX', 'Jeff',8);
 
 -- Baris
 
@@ -149,9 +156,6 @@ VALUES ('Baris', 'baris@email.com', 'motdepasse123', 'h', '2022-02-22', '2000-01
 INSERT INTO Avatar (id_nom, couleur, date_creation, mox, alias_joueur)
 VALUES ('BarisAvatar1', 1, '2022-01-15', 500, 'Baris*');
 
--- Insérer les jeux et leurs habiletés
-INSERT INTO Monde (nom, sigle, descriptions)
-VALUES ('DeepHorizonX', 'DHX', 'Jeu de science-fiction futuriste');
 
 INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
 VALUES ('Auto Guérison', 'AGU', 100, 0.5, 0.3, 0.2, 'Récupérer santé automatiquement');
