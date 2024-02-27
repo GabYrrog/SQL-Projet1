@@ -10,11 +10,12 @@ VALUES ('Chuck', '3840', '2023-02-23 00:00:00', 48, 'GabYrrog');
 
 -- Insert Monde Gabriel
 INSERT INTO Monde (nom, sigle, descriptions)
-VALUES ('SpaceX', 'Elon', 'Un monde ressemblant etrangement a mars');
+VALUES ('SpaceX', 'Elo', 'Un monde ressemblant etrangement a mars');
+
 
 -- Emeric insert table monde de FreeZoneXTM
 INSERT INTO Monde 
-        VALUES  ('FreeZoneXTM', 'FZX', 'This is the world mister bezos wants to make');
+        VALUES  ('FreeZoneX', 'FZX', 'This is the world mister bezos wants to make');
 
 -- BARIS Insérer les jeux et leurs habiletés
 INSERT INTO Monde (nom, sigle, descriptions)
@@ -33,7 +34,7 @@ VALUES ('Bouclier de proximite', 'BP', 80.500, 2.0, 1.0, 0.5, 'Augmente la defen
 INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
 VALUES ('Backstab', 'BST', 60.250, 0.5, 1.5, 2.0, 'Tu las pas vu venir');
 
--- 2 activites
+-- 3 activites
 INSERT INTO Activite (debut, fin, duree, nom_joueur)
 VALUES ('2024-02-23 14:00:00', '2024-02-23 15:00:00', 60, 'GabYrrog');
 
@@ -42,6 +43,7 @@ VALUES ('2024-02-24 10:00:00', '2024-02-24 10:30:00', 30, 'GabYrrog');
 
 INSERT INTO Activite (debut, fin, duree, nom_joueur)
 VALUES ('2024-02-26 10:00:00', '2024-02-26 10:30:00', 30, 'GabYrrog');
+
 
 -- 3 capsules   REVISER LES INT ACTIVITE pour que ca fitte avec les bons serials
 INSERT INTO Capsule (duree, monde, avatar, activite)
@@ -77,7 +79,7 @@ VALUES ('Virlak*','1666', '2023-02-25 06:06:06',200, 'Viken*'),
 
 -- Insert 4 activites
 INSERT INTO Activite (debut,fin,duree,nom_joueur)
-VALUES('2023-02-30 01:00:00','2023-02-30 02:00:00',60,'Viken*'), -- activite 4
+VALUES('2023-02-28 01:00:00','2023-02-28 02:00:00',60,'Viken*'), -- activite 4
         ('2023-03-02 05:00:00', '2023-03-02 15:00:00',600,'Viken*'),  -- activite 5
         ('2023-03-05 18:00:00','2023-03-05 22:00:00',240,'Viken*'),  -- activite 6
         ('2023-03-10 22:00:00','2023-03-11 02:00:00',240,'Viken*');  -- activite 7
@@ -104,14 +106,6 @@ VALUES ('Trousse de soin','ITS', 0.05, 'Une trousse de premier soin qui permet d
         ('Chickiriko','ICH',0.01,'Poule qui quand lancer sur un enemi fait apparaitre une armada de poules vengeuses'),
         ('Oppenglamer','IOP',0.001,'Entoure votre personnage d"un halo lumineux lui conferant une augmentation de charisme importante');
 
--- Insert ItemsAvatar
-INSERT INTO Item_avatar (avatar, item, quantite)
-VALUES (3,1,3),
-        (4,3,4),
-        (5,6,1),
-        (6,4,9),
-        (4,2,3),
-        (1,4,2);
 
 
 
@@ -154,7 +148,7 @@ VALUES ('Baris', 'baris@email.com', 'motdepasse123', 'h', '2022-02-22', '2000-01
 
 -- Insérer l'avatar de Baris
 INSERT INTO Avatar (id_nom, couleur, date_creation, mox, alias_joueur)
-VALUES ('BarisAvatar1', 1, '2022-01-15', 500, 'Baris*');
+VALUES ('BarisAvatar1', 1, '2022-01-15', 500, 'Baris');
 
 
 INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
@@ -167,14 +161,6 @@ INSERT INTO Paire_habilete_et_monde (monde, habilete)
 VALUES ('DeepHorizonX', (SELECT id_habilete FROM Habilete WHERE sigle = 'AGU')),
        ('DeepHorizonX', (SELECT id_habilete FROM Habilete WHERE sigle = 'IZO'));
 
--- Insérer les items
-INSERT INTO Items (nom, sigle, probabilite, description)
-VALUES ('Potion de Régénération', 'PRG', 0.05, 'Restaure 50% de la santé.'),
-       ('Grenade EMP', 'EMP', 0.02, 'Désactive les appareils électroniques ennemis.');
-
-INSERT INTO Items_monde (monde, item)
-VALUES ('DeepHorizonX', (SELECT id_item FROM Items WHERE sigle = 'PRG')),
-       ('DeepHorizonX', (SELECT id_item FROM Items WHERE sigle = 'EMP'));
 
 INSERT INTO Activite (debut, fin, duree, nom_joueur)
 VALUES ('2022-03-01 08:00:00', '2022-03-01 09:00:00', 3600, 'Baris'),
@@ -194,3 +180,11 @@ VALUES ('BarisAvatar1', 'GG EZ'),
        ('BarisAvatar1', 'En avant vers la victoire!');
 
 
+-- Vincent Insert ItemsAvatar
+INSERT INTO Item_avatar (avatar, item, quantite)
+VALUES (3,1,3),
+        (4,3,4),
+        (5,6,1),
+        (6,4,9),
+        (4,2,3),
+        (1,4,2);
