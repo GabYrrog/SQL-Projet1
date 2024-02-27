@@ -119,7 +119,7 @@ INSERT INTO Avatar
 
 -- Emeric insert table monde de FreeZoneXTM
 INSERT INTO Monde 
-        VALUES  ('FreeZoneXTM', 'JFZXTM', 'This is the world mister bezos wants to make');
+        VALUES  ('FreeZoneXTM', 'FZX', 'This is the world mister bezos wants to make');
 
 -- Emeric insert 3 capsules d'activité
 INSERT INTO Activite (debut, fin, duree, nom_joueur)
