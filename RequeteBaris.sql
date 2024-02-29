@@ -1,4 +1,4 @@
--- Requête 2 pour obtenir la liste des avatars d'un joueur avec des détails
+-- Requête 2 : Requête pour obtenir la liste des avatars d'un joueur avec des détails
 SELECT 
     A.id_nom AS nom,
     (A.couleur / 65536) AS rouge, 
@@ -14,22 +14,16 @@ WHERE
     J.id_alias = 'Baris';
 
 
--- Cette requête(7) récupère les avatars des joueurs avec le nombre total d'items qu'ils possèdent, les groupant par joueur, ordonnés par le nombre total d'items possédés de manière décroissante, limités aux 5 premiers joueurs.
-SELECT 
-    A.id_nom AS nom_avatar,
-    COUNT(IA.item) AS total_items,
-    J.id_alias AS joueur,
-    AVG(A.mox) AS moyenne_mox
-FROM 
-    Avatar AS A
-JOIN 
-    Item_avatar AS IA ON A.id_nom = IA.avatar
-JOIN 
-    Joueur AS J ON A.alias_joueur = J.id_alias
-GROUP BY 
-    A.id_nom, J.id_alias
-ORDER BY 
-    total_items DESC
-LIMIT 
-    5;
+-- Requête 7 : Cette requête sélectionne les avatars avec leur nombre total d'items, en les regroupant par avatar, en ordonnant par ordre décroissant du nombre total d'items, en limitant les résultats aux 3 premiers avatars ayant le plus grand nombre d'items, et en excluant les avatars ayant moins de 3 items.
+SELECT Avatar.id_nom, COUNT(Item_avatar.item) AS total_items
+FROM Avatar
+JOIN Joueur ON Avatar.alias_joueur = Joueur.id_alias
+JOIN Item_avatar ON Avatar.id_nom = Item_avatar.avatar
+JOIN Capsule ON Capsule.avatar = Avatar.id_nom
+JOIN Monde ON Capsule.monde = Monde.nom
+GROUP BY Avatar.id_nom
+HAVING COUNT(Item_avatar.item) >= 3
+ORDER BY total_items DESC
+LIMIT 3;
+
 

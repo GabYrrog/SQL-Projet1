@@ -148,7 +148,7 @@ VALUES ('Baris', 'baris@email.com', 'motdepasse123', 'h', '2022-02-22', '2000-01
 
 -- Insérer l'avatar de Baris
 INSERT INTO Avatar (id_nom, couleur, date_creation, mox, alias_joueur)
-VALUES ('BarisAvatar1', 1, '2022-01-15', 500, 'Baris');
+VALUES ('BarisAvatar1', '16711680', '2022-01-15', 500, 'Baris');
 
 
 INSERT INTO Habilete (nom, sigle, energie_max, coef1, coef2, coef3, descriptions)
