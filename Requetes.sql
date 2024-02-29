@@ -3,7 +3,17 @@
 entre crochets dans la même colonne, la date d’obtention, le niveau courant, la valeur en moX
 du niveau courant et le coût en moX pour acheter le prochain niveau*/
 
+INSERT 
 
+SELECT '[ ' || hab.sigle || hab.nom || ' ]' AS "Habilete", 
+        avhab.date_obtention, 
+        avhab.niveau_actuel,
+        hab.coef1 * ((avhab.niveau_actuel ^ 2) + hab.coef2) * (avhab.niveau_actuel + hab.coef3)  AS "Cout niveau courant",
+        hab.coef1 * (((avhab.niveau_actuel + 1) ^ 2) + hab.coef2) * ((avhab.niveau_actuel + 1) + hab.coef3) AS "Cout niveau suivant"
+        FROM Avatar_habilete as avhab
+            INNER JOIN Habilete as hab
+                ON avhab.id_habilete = hab.id_habilete
+            WHERE avhab.id_nom = "Virlak*";
 
 
 
