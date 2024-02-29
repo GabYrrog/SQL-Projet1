@@ -1,4 +1,4 @@
--- Requête pour obtenir la liste des avatars d'un joueur avec des détails
+-- Requête 2 pour obtenir la liste des avatars d'un joueur avec des détails
 SELECT 
     A.id_nom AS nom,
     (A.couleur / 65536) AS rouge, 
@@ -14,7 +14,7 @@ WHERE
     J.id_alias = 'Baris';
 
 
--- Cette requête récupère les avatars des joueurs avec le nombre total d'items qu'ils possèdent, les groupant par joueur, ordonnés par le nombre total d'items possédés de manière décroissante, limités aux 5 premiers joueurs.
+-- Cette requête(7) récupère les avatars des joueurs avec le nombre total d'items qu'ils possèdent, les groupant par joueur, ordonnés par le nombre total d'items possédés de manière décroissante, limités aux 5 premiers joueurs.
 SELECT 
     A.id_nom AS nom_avatar,
     COUNT(IA.item) AS total_items,
