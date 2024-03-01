@@ -3,9 +3,12 @@
 entre crochets dans la même colonne, la date d’obtention, le niveau courant, la valeur en moX
 du niveau courant et le coût en moX pour acheter le prochain niveau*/
 
-INSERT 
+INSERT INTO Avatar_habilete (id_nom, id_habilete, date_obtention, niveau_actuel)
+VALUES ('Virlak*','1', '2024-02-26 8:10:00', 1),
+		('Virlak*','2', '2024-02-28 12:40:00', 2),
+		('Virlak*','3', '2024-02-29 20:30:00', 3);
 
-SELECT '[ ' || hab.sigle || hab.nom || ' ]' AS "Habilete", 
+SELECT '[ ' || hab.sigle || ' , ' || hab.nom || ' ]' AS "Habilete", 
         avhab.date_obtention, 
         avhab.niveau_actuel,
         hab.coef1 * ((avhab.niveau_actuel ^ 2) + hab.coef2) * (avhab.niveau_actuel + hab.coef3)  AS "Cout niveau courant",
@@ -13,7 +16,7 @@ SELECT '[ ' || hab.sigle || hab.nom || ' ]' AS "Habilete",
         FROM Avatar_habilete as avhab
             INNER JOIN Habilete as hab
                 ON avhab.id_habilete = hab.id_habilete
-            WHERE avhab.id_nom = "Virlak*";
+            WHERE avhab.id_nom = 'Virlak*';
 
 
 
@@ -25,6 +28,8 @@ les requêtes produites par l’équipe, vous devez respecter ces contraintes :
 À même le script et avant ces requêtes, vous devez ajouter un commentaire expliquant
 précisément ce que fait la requête. Le pointage associé à chacune de ces requêtes est autant basé
 sur la pertinence que la qualité de la réalisation technique.*/
+
+
 
 
 -- 8
