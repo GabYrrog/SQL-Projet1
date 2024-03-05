@@ -13,7 +13,7 @@ SELECT SUM(SUM) as "Valeur totale de l'avatar principal"
 	    FROM item_avatar
 	    WHERE avatar ='Virlak*'
 
-        GROUP BY
+        UNION ALL
 
         SELECT
 	        SUM((Habilete.coef1 * Avatar_habilete.niveau_actuel) + 
@@ -37,7 +37,7 @@ b. vous devez utiliser ces clauses: LIMIT, GROUP BY, ORDER BY, HAVING.
 précisément ce que fait la requête. Le pointage associé à chacune de ces requêtes est autant basé
 sur la pertinence que la qualité de la réalisation technique.*/
 
---  
+-- Requete 7 : Top 10 du temps total de l'avatar le plus joué par un joueur entre 18 et 30 ans
 -- Comprend les tables: joueur, avatar, capsule
  -- Emeric (sans aide)
  -- Fonctionnelle: Oui

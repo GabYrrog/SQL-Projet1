@@ -1,3 +1,10 @@
+-- 1. Donnez la liste de tours les joueurs en présentant : alias, courriel, date d'inscription
+-- Emeric requete
+SELECT id_alias AS alias,
+courriel AS courriel,
+date_inscription AS "date d'inscription" FROM Joueur;
+
+
 -- Requête 2 : Requête pour obtenir la liste des avatars d'un joueur avec des détails
 -- Baris
 SELECT 
@@ -32,6 +39,30 @@ SELECT '[ ' || hab.sigle || ' , ' || hab.nom || ' ]' AS "Habilete",
             WHERE avhab.id_nom = 'Virlak*';
 
 
+-- 4. Pour l'avatar principal, donnez la valeur totale de tous les items qu'ils possède 
+-- (les habiletés considérant le niveau et les items considérant la quantité)
+-- Emeric Requete
+SELECT SUM(SUM) as "Valeur totale de l'avatar principal"
+    FROM (   
+		SELECT SUM(quantite)
+	    FROM item_avatar
+	    WHERE avatar ='Virlak*'
+
+        UNION ALL
+
+        SELECT
+	        SUM((Habilete.coef1 * Avatar_habilete.niveau_actuel) + 
+	        (Habilete.coef2 * Avatar_habilete.niveau_actuel) +
+	    	(Habilete.coef3))
+	
+        FROM
+	        Avatar_habilete
+        JOIN
+	        Habilete ON Avatar_habilete.Id_habilete = Habilete.Id_habilete
+	
+        WHERE
+	        id_nom = 'Virlak*'
+)   AS "Valeur Total";
 -- Gabriel
 -- 5. Pour le joueur principal, donnez le nombre total d’heures passées dans chaque jeu joué. 
 -- Gabriel (sans aide)
@@ -142,6 +173,41 @@ VALUES ('Sephiroth','1', '2024-02-26 10:10:00', 10),
 		('Sephiroth','5', '2024-02-26 10:09:00', 6);
 
 
+
+
+-- Requete 7 : Top 10 du temps total de l'avatar le plus joué par un joueur entre 18 et 30 ans
+-- Comprend les tables: joueur, avatar, capsule
+ -- Emeric (sans aide)
+ -- Fonctionnelle: Oui
+
+WITH TimePerAvatar AS (
+    SELECT 
+        Capsule.avatar,
+        Avatar.alias_joueur,
+        SUM(Capsule.duree) AS total_time,
+        Joueur.date_naissance,
+        RANK() OVER (PARTITION BY Avatar.alias_joueur ORDER BY SUM(Capsule.duree) DESC) AS AvatarPlayedRank
+    FROM 
+        Capsule
+    JOIN
+        Avatar ON Capsule.avatar = Avatar.Id_nom
+    JOIN
+        Joueur ON Joueur.id_alias = Avatar.alias_joueur
+    GROUP BY
+        Capsule.avatar, Avatar.alias_joueur, Joueur.date_naissance
+	HAVING now() - Joueur.date_naissance > INTERVAL '18 years' AND now() - Joueur.date_naissance < INTERVAL '30 years'
+	ORDER BY total_time DESC
+)
+SELECT 
+    avatar,
+    alias_joueur,
+    total_time,
+    date_naissance
+FROM 
+    TimePerAvatar
+WHERE 
+    AvatarPlayedRank = 1
+Limit 10;
 
 
 
