@@ -116,9 +116,9 @@ VALUES ('Trousse de soin','ITS', 0.05, 'Une trousse de premier soin qui permet d
 INSERT INTO Joueur
         VALUES  ('Emeric','emeric_rivard@hotmail.com','JeffreyBezosTM','h', DEFAULT, '1997-01-28');
 
--- Emeric insert 1 avatar changer le color value
+-- Emeric insert 1 avatar 
 INSERT INTO Avatar
-        VALUES  ('Jeff',10,DEFAULT, DEFAULT, 'Emeric');
+        VALUES  ('Jeff',8888,DEFAULT, DEFAULT, 'Emeric');
 
 
 -- Emeric insert 3 capsules d'activité
