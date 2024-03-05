@@ -21,11 +21,6 @@ du niveau courant et le coût en moX pour acheter le prochain niveau*/
 -- Auteur: Vincent
 -- Fonctionnelle: Oui
 
-INSERT INTO Avatar_habilete (id_nom, id_habilete, date_obtention, niveau_actuel)
-VALUES ('Virlak*','4', '2024-02-26 8:10:00', 1),
-		('Virlak*','5', '2024-02-28 12:40:00', 2),
-		('Virlak*','4', '2024-02-29 20:30:00', 3);
-
 SELECT '[ ' || hab.sigle || ' , ' || hab.nom || ' ]' AS "Habilete", 
         avhab.date_obtention, 
         avhab.niveau_actuel,
