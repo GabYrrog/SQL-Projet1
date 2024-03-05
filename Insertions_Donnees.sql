@@ -77,12 +77,6 @@ VALUES ('Virlak*','1666', '2023-02-25 06:06:06',200, 'Viken*'),
         ('Palstice','4242','2023-02-26 00:00:00',400, 'Viken*'),
         ('Sephiroth', '8888', '2023-02-28 00:00:00',1000, 'Viken*');
 
--- Insert Habiletes d'avatar
-INSERT INTO Avatar_habilete (id_nom, id_habilete, date_obtention, niveau_actuel)
-VALUES ('Virlak*','4', '2024-02-26 8:10:00', 1),
-		('Virlak*','5', '2024-02-28 12:40:00', 2),
-		('Virlak*','4', '2024-02-29 20:30:00', 3);
-
 -- Insert 4 activites
 INSERT INTO Activite (debut,fin,duree,nom_joueur)
 VALUES('2023-02-28 01:00:00','2023-02-28 02:00:00',60,'Viken*'), -- activite 4
@@ -194,3 +188,9 @@ VALUES ('Jeff',1,3),
         ('Virlak*',4,9),
         ('Chuck',2,3),
         ('BarisAvatar1',4,2);
+
+-- Vincent Insert Habiletes d'avatar
+INSERT INTO Avatar_habilete (id_nom, id_habilete, date_obtention, niveau_actuel)
+VALUES ('Virlak*','4', '2024-02-26 8:10:00', 1),
+		('Virlak*','5', '2024-02-28 12:40:00', 2),
+		('Virlak*','4', '2024-02-29 20:30:00', 3);
