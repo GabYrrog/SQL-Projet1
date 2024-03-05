@@ -42,7 +42,7 @@ SELECT '[ ' || hab.sigle || ' , ' || hab.nom || ' ]' AS "Habilete",
 SELECT capsule.monde AS "Monde",
        SUM(capsule.duree) AS "Total Duree"
 FROM avatar
-JOIN capsule ON avatar.id_nom = capsule.avatar
+INNER JOIN capsule ON avatar.id_nom = capsule.avatar
 WHERE avatar.alias_joueur LIKE 'Viken%'
 GROUP BY capsule.monde
 
@@ -72,9 +72,9 @@ SELECT
     i.item as "ItemID"
 FROM 
     joueur j
-JOIN 
+INNER JOIN 
     avatar a ON a.alias_joueur = j.id_alias -- Associe le joueur à son avatar
-JOIN 
+INNER JOIN 
     (SELECT 
          c.avatar -- Dans la capsule activité, regrouper les avatars qui ont une durée cumulée de plus de 500
      FROM 
@@ -85,7 +85,7 @@ JOIN
          SUM(c.duree) > 500) as filtered_avatars ON filtered_avatars.avatar = a.id_nom -- La suite du Join plus haut: 
          -- prend les avatars filtrés dans la table capcule
          -- et les relie aux noms d'avatar de la table avatar
-JOIN 
+INNER JOIN 
     item_avatar i ON a.id_nom = i.avatar -- Assicue l'item ID à l'avatar
 ORDER BY 
     j.date_inscription ASC
